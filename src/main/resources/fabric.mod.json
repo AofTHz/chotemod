@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "chotemod",
+	"version": "${version}",
+	"name": "ChoteMod",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"AofTHz"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/chotemod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.aofthz.chotemod"
+		],
+		"client" : [
+			"com.aofthz.chotemodClient"
+		]
+		,
+		"fabric-datagen": [
+			"com.aofthz.chotemodDataGenerator"
+		]
+	},
+	"mixins": [
+		"chotemod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.19",
+		"minecraft": "~1.19.2",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
