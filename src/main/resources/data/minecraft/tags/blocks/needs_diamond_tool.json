@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "chotemod:choterite_ore"
+    "chotemod:choterite_ore",
+    "chotemod:deepslate_choterite_ore"
   ]
 }

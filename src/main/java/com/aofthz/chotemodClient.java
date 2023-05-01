@@ -9,5 +9,6 @@ public class chotemodClient implements ClientModInitializer {
     public void onInitializeClient() {
         ModItem.registerModItem();
         ModBlock.registerModBlock();
+
     }
 }

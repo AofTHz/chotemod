@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "chotemod:block/deepslate_choterite_ore"
+  }
+}

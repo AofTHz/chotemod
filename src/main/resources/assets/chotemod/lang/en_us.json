@@ -1,9 +1,13 @@
 {
   "item.chotemod.raw_chote": "Raw Choterite",
   "item.chotemod.chote": "Choterite",
+  "item.chotemod.leelaslayer_cross": "LeelaSlayer Cross",
+  "item.chotemod.glock": "Glock",
+  "item.chotemod.b_sword":"B sauce!",
 
   "block.chotemod.choterite_block": "Block of Choterite",
   "block.chotemod.choterite_ore": "Choterite Ore",
+  "block.chotemod.deepslate_choterite_ore": "Deepslate Choterite Ore",
 
   "itemGroup.chotemod.choterite": "Chote Mod Tab"
 }

@@ -20,7 +20,9 @@ public class ModBlock {
     public static final Block CHOTERITE_ORE = registerBlock("choterite_ore",
             new OreBlock(FabricBlockSettings.of(Material.STONE).strength(4f).requiresTool(),
                     UniformIntProvider.create(3, 7)), ModItemGroup.CHOTERITE);
-
+    public static final Block DEEPSLATE_CHOTERITE_ORE = registerBlock("deepslate_choterite_ore",
+            new OreBlock(FabricBlockSettings.of(Material.STONE).strength(5f).requiresTool(),
+                    UniformIntProvider.create(3, 7)),ModItemGroup.CHOTERITE);
     private static Block registerBlock(String name, Block block, ItemGroup tab){
         registerBlockItem(name,block,tab);
         return Registry.register(Registry.BLOCK, new Identifier(chotemod.MOD_ID, name),block);
