@@ -9,5 +9,9 @@
   "block.chotemod.choterite_ore": "Choterite Ore",
   "block.chotemod.deepslate_choterite_ore": "Deepslate Choterite Ore",
 
-  "itemGroup.chotemod.choterite": "Chote Mod Tab"
+  "itemGroup.chotemod.choterite": "Chote Mod Tab",
+  "key.category.chotemod.test": "ChoteMod Category",
+  "key.chotemod.gain_mana": "Gain Mana",
+  "message.chotemod.drank_water": "there water",
+  "message.chotemod.no_water": "no water"
 }

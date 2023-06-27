@@ -2,6 +2,7 @@ package com.aofthz;
 
 import com.aofthz.entity.ModEntity;
 import com.aofthz.entity.custom.Berry;
+import com.aofthz.networking.NetworkTest;
 import com.aofthz.world.feature.ModConfiguredFeatures;
 import com.aofthz.world.gen.ModOreGeneration;
 import net.fabricmc.api.ModInitializer;
@@ -29,5 +30,6 @@ public class chotemod implements ModInitializer {
         LOGGER.info("Hello Fabric world!");
         LOGGER.info("Never gonna give you up");
         LOGGER.info("Never gonna let you down");
+        NetworkTest.registerC2SPackets();
     }
 }
