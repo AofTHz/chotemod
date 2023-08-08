@@ -17,5 +17,6 @@ public class chotemodClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntity.BERRY, BerryRenderer::new);
         NetworkTest.registerS2CPackets();
         KeyInputHandler.register();
+
     }
 }

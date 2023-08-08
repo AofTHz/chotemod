@@ -38,6 +38,7 @@ public class Berry extends PassiveEntity implements IAnimatable, Inventory {
         super(entityType, world);
     }
 
+
     @Override
     public int size() {
         return inventory.size();
@@ -45,72 +46,66 @@ public class Berry extends PassiveEntity implements IAnimatable, Inventory {
 
     @Override
     public boolean isEmpty() {
-        return false;
+        for (ItemStack itemStack : inventory) {
+            if (!itemStack.isEmpty()) {
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
     public ItemStack getStack(int slot) {
-        return null;
+        if (slot >= 0 && slot < inventory.size()) {
+            return inventory.get(slot);
+        }
+        return ItemStack.EMPTY;
     }
 
     @Override
     public ItemStack removeStack(int slot, int amount) {
-        ItemStack stack = inventory.get(slot);
-        if (stack.isEmpty()) {
-            return ItemStack.EMPTY;
-        }
-        if (stack.getCount() <= amount) {
-            setStack(slot, ItemStack.EMPTY);
-        } else {
-            stack = stack.split(amount);
-            markDirty();
-        }
-        return stack;
+        return null;
     }
 
     @Override
     public ItemStack removeStack(int slot) {
-        ItemStack stack = inventory.get(slot);
-        if (stack.isEmpty()) {
-            return ItemStack.EMPTY;
-        }
-        setStack(slot, ItemStack.EMPTY);
-        return stack;
+        return null;
     }
 
     @Override
     public void setStack(int slot, ItemStack stack) {
-        inventory.set(slot, stack);
-        if (stack.getCount() > getMaxCountPerStack()) {
-            stack.setCount(getMaxCountPerStack());
+        if (slot >= 0 && slot < inventory.size()) {
+            inventory.set(slot, stack);
         }
-        markDirty();
+
     }
+
     @Override
     public void clear() {
-
+        inventory.clear();
     }
 
     @Override
     public void markDirty() {
 
     }
-/*
-    @Override
-    public ActionResult interactMob(PlayerEntity player, Hand hand) {
-        if (player.isSneaking()) {
-            return ActionResult.PASS;
-        } else if (!player.world.isClient) {
-            player.openHandledScreen(new SimpleNamedScreenHandlerFactory((i, playerInventory, playerEntity) -> {
-                return new EntityInventoryScreenHandler(i, playerInventory, this);
-            }, new TranslatableText("container.inventory")));
+
+    /*
+        @Override
+        public ActionResult interactMob(PlayerEntity player, Hand hand) {
+            if (player.isSneaking()) {
+                return ActionResult.PASS;
+            } else if (!player.world.isClient) {
+                player.openHandledScreen(new SimpleNamedScreenHandlerFactory((i, playerInventory, playerEntity) -> {
+                    return new EntityInventoryScreenHandler(i, playerInventory, this);
+                }, new TranslatableText("container.inventory")));
+            }
+            return ActionResult.SUCCESS;
         }
-        return ActionResult.SUCCESS;
-    }
-*/
+    */
     @Override
     public boolean canPlayerUse(PlayerEntity player) {
-        return false;
+        return true;
     }
 
     public static DefaultAttributeContainer.Builder setAttribute(){
@@ -204,6 +199,5 @@ public class Berry extends PassiveEntity implements IAnimatable, Inventory {
     protected void playStepSound(BlockPos pos, BlockState state) {
         this.playSound(SoundEvents.ENTITY_PIG_STEP,0.15f,1.0f);
     }
-
 
 }
